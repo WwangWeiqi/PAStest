@@ -1,0 +1,58 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --dev \
+
+PATH: 
+  C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\ProgramData\chocolatey\bin;C:\Users\Weiqi\AppData\Local\.meteor;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Users\Weiqi\AppData\Roaming\npm;;C:\WINDOWS\System32\OpenSSH\;C:\Users\Weiqi\AppData\Local\.meteor;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  10.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EBUSY: resource busy or locked, lstat 'C:\hiberfil.sys'
+
+npm manifest: 
+  {
+    "name": "PAStest",
+    "private": true,
+    "scripts": {
+      "start": "meteor run",
+      "test": "meteor test --once --driver-package meteortesting:mocha",
+      "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+      "visualize": "meteor --production --extra-packages bundle-visualizer"
+    },
+    "dependencies": {
+      "@babel/runtime": "^7.1.5",
+      "meteor-node-stubs": "^0.4.1"
+    },
+    "meteor": {
+      "mainModule": {
+        "client": "client/main.js",
+        "server": "server/main.js"
+      },
+      "testModule": "tests/main.js"
+    },
+    "devDependencies": {
+      "autoprefixer": "^6.3.1"
+    },
+    "postcss": {
+      "plugins": {
+        "autoprefixer": {
+          "browsers": [
+            "last 2 versions"
+          ]
+        }
+      }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

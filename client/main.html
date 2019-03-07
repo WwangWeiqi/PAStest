@@ -1,0 +1,24 @@
+<head>
+  <title>PAStest</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{> hello}}
+
+</body>
+
+<template name="hello">
+  <div class="ui input">
+  <input type="text" placeholder="input address">
+  </div>
+
+  <button class="ui button">GetBalance</button>
+
+  {{#if TemplateVar.get "Balance"}}
+  
+  <div>{{TemplateVar.get "Balance"}} PAS</div>
+  {{/if}}
+</template>
+
+
