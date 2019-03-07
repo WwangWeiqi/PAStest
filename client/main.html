@@ -3,22 +3,70 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-  {{> hello}}
+  <h1>Test Contract API</h1>
+  <div class="container">
+    <div class="ui three column grid">
+  <div  class="column">{{> checkBalance}}</div>
+  <div  class="column">{{> TransferPAS}}</div>
+   </div>
+</div>
 
 </body>
 
-<template name="hello">
-  <div class="ui input">
-  <input type="text" placeholder="input address">
+<template name="checkBalance">
+  <div class="ui card">
+    <div class="content">
+      <div class="header"><h2>BALANCE</h2></div>
+    </div>
+
+    <div class="content">
+    <div class="ui left action input fluid">
+     <button class="ui teal icon button">
+     Address
+     </button>
+     <input type="text"  placeholder="input address" >
+    </div>
+    <br/>
+    <div class="ui left action input fluid">
+     <button class="ui teal icon button">
+     PAS
+     </button>
+      <input type="text" placeholder="0" value="{{TemplateVar.get 'Balance'}}" disabled>
+   </div>
   </div>
 
-  <button class="ui button">GetBalance</button>
+  <div class="extra content">
+    <button class="ui button"> GetBalance</button>
+  </div>
+</div>
+</template>
 
-  {{#if TemplateVar.get "Balance"}}
-  
-  <div>{{TemplateVar.get "Balance"}} PAS</div>
-  {{/if}}
+<template name="TransferPAS"> 
+<div class="ui card">
+    <div class="content">
+      <div class="header"><h2>TRANSFER</h2></div>
+    </div>
+
+    <div class="content">
+    <div class="ui left action input fluid">
+     <button class="ui teal icon button">
+     To
+     </button>
+     <input id="distAddr" type="text"  placeholder="input address" >
+    </div>
+    <br/>
+    <div class="ui left action input fluid">
+     <button class="ui teal icon button">
+     Amout
+     </button>
+      <input  id="amount" type="text" placeholder="0">
+   </div>
+  </div>
+
+  <div class="extra content">
+    <button class="ui button"> Send</button>
+  </div>
+</div>
 </template>
 
 

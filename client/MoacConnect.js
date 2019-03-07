@@ -47,3 +47,17 @@ if (!gPASInstance) {
 export var getBalance = function(address,callback){
   gERC20Instance.balanceOf(address,callback);
 }
+
+export var transferPAS = function(_to, _value,callback){
+  var opt =  {
+    from: chain3.mc.accounts[0],
+    gas: 5000000,
+    value: 0,
+    gasPrice: 20000000000,
+  };
+  gERC20Instance.transfer.sendTransaction(_to,_value,opt,function(e,r){
+      if(callback){
+        callback(e,r);
+      }
+  })
+}

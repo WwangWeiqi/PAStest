@@ -4,19 +4,10 @@ import MoacConnect from './MoacConnect'
 import './main.html';
  MoacConnect.InitChain3();
 
-Template.hello.onCreated(function helloOnCreated() {
- 
-});
-
-Template.hello.helpers({
-  
-});
-
-Template.hello.events({
+Template.checkBalance.events({
   'click button'(event, instance) {
   	let template = Template.instance();
   	let address = $("input").val();
-  	console.log(address);
     MoacConnect.getBalance(address,function(e,r){
     	if(!e){
     		console.log("run",r.toNumber());
@@ -28,3 +19,17 @@ Template.hello.events({
     })
   },
 });
+
+Template.TransferPAS.events({
+  'click button'(event,instance){
+    let dist = $("#distAddr").val();
+    let value = $("#amount").val();
+    console.log(dist);
+    console.log(value);
+    MoacConnect.transferPAS(dist,value,function(e,r){
+      if(!e){
+        console.log("TX HASH", r);
+      }
+    })
+  }
+})
