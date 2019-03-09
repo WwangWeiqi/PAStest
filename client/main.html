@@ -5,11 +5,23 @@
 <body>
   <h1>Test Contract API</h1>
   <div class="container">
-    <div class="ui three column grid">
-  <div  class="column">{{> checkBalance}}</div>
-  <div  class="column">{{> TransferPAS}}</div>
+    <div class="ui grid">
+      <div class="row">
+        <div  class="eight wide column">{{> checkBalance}}</div>
+        <div  class="eight wide column">{{> TransferPAS}}</div>
+      </div>
+      <div class="row">  
+        <div class="three wide column"></div>
+        <div class="ten wide column">{{> CoDeLog}}</div>
+        <div class="three wide column"></div>
+      </div>
    </div>
 </div>
+
+  <div class="ui active inverted dimmer">
+    <div class="ui text loader">Sending Token...</div>
+  </div>
+ 
 
 </body>
 
@@ -65,6 +77,29 @@
 
   <div class="extra content">
     <button class="ui button"> Send</button>
+  </div>
+</div>
+</template>
+
+<template name="CoDeLog">
+  <div class="ui form">
+  <div class="field">
+    <textarea id="beforeCompress" placeholder="Input Logs..."></textarea>
+  </div>
+  
+  <div class="field">
+    <textarea id="afterCompress" placeholder="after compress...." value="{{TemplateVar.get 'afterCompress'}}" ></textarea>
+  </div>
+  <div class="extra content">
+     <div class="ui toggle checkbox">
+       <input id="addCompress" name="public" type="checkbox">
+       <label>Add Compressed Log</label>
+     </div>
+  </div>
+  <br>
+  <div class="extra content">
+    <button id="compress" class="ui button"> Compress</button>
+    <button id="addlog" class="ui button">AddLog</button>
   </div>
 </div>
 </template>

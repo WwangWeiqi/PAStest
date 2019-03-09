@@ -48,6 +48,10 @@ export var getBalance = function(address,callback){
   gERC20Instance.balanceOf(address,callback);
 }
 
+export var getLog = function(_logId, callback){
+  gPASInstance.getLog(_logId,callback);
+}
+
 export var transferPAS = function(_to, _value,callback){
   var opt =  {
     from: chain3.mc.accounts[0],

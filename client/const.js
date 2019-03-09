@@ -1,4 +1,4 @@
-export const httpProvider = "http://localhost:8545";
+export const httpProvider = "http://10.1.10.141:8545";
 export const ERC20contractAddr ="0xd1a1b9bd6e0903d57bf5fd614338acc8cf1d09a3";
 export const ERC20contractABI =[
 	{
