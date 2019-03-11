@@ -9,6 +9,14 @@ import './main.html';
 //install lz-string, install jsonpack
  var filter = chain3.mc.filter("latest");
 
+
+ Template.body.events({
+  'click #switch'(){
+    $(".table").toggle();
+    $(".form").toggle();
+  }
+ })
+
 Template.checkBalance.events({
   'click button'(event, instance) {
   	let template = Template.instance();

@@ -9,16 +9,17 @@ body {
 	width: 80%;
 	margin:auto;
 	margin-top: 5%;
-	 border: 1px solid rgba(0,0,0,.0975);
-	 background: white;
+	 /*border: 1px solid rgba(0,0,0,.0975);*/
+	 /*background: white;*/
 	 height: 100%;
 	 padding: 3%;
-	 box-shadow: 0px 1px 1px 1px #4B4B4B
+	 /*box-shadow: 0px 1px 1px 1px #4B4B4B*/
 }
 
-.ui.grid {
+/*.ui.grid {
 	height:100%;
 }
+*/
 .ui.card {
 	margin: auto;
 }
@@ -32,6 +33,14 @@ body {
 
 .ui.active.dimmer {
 	height: 115%;
+	display: none;
+}
+
+.form {
+	display:block;
+}
+
+.table {
 	display: none;
 }
 

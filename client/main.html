@@ -11,8 +11,8 @@
         <div  class="eight wide column">{{> TransferPAS}}</div>
       </div>
       <div class="row">  
-        <div class="three wide column"></div>
-        <div class="ten wide column">{{> CoDeLog}}</div>
+        <div class="three wide column"><button class="ui button" id="switch"> Switch</button></div>
+        <div class="ten wide column">{{> CoDeLog}}{{> logTable}}</div>
         <div class="three wide column"></div>
       </div>
    </div>
@@ -22,7 +22,6 @@
     <div class="ui text loader">Sending Token...</div>
   </div>
  
-
 </body>
 
 <template name="checkBalance">
@@ -103,6 +102,30 @@
     <button id="readLog" class="ui button">ReadLog</button>
   </div>
 </div>
+</template>
+
+<template name="logTable">
+  <table class="ui red table">
+  <thead>
+    <tr>
+    <th>Food</th>
+    <th>Calories</th>
+    <th>Protein</th>
+   </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Apples</td>
+      <td>200</td>
+      <td>0g</td>
+    </tr>
+    <tr>
+      <td>Orange</td>
+      <td>310</td>
+      <td>0g</td>
+    </tr>
+  </tbody>
+</table>
 </template>
 
 
