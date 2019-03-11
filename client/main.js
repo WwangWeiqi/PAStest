@@ -2,10 +2,11 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import MoacConnect from './MoacConnect';
 import {compressLog, depressLog} from './utils'; 
-import { EJSON } from 'meteor/ejson'
+import { EJSON } from 'meteor/ejson';
+import { Random } from 'meteor/random';
 import './main.html';
  MoacConnect.InitChain3();
-
+//install lz-string, install jsonpack
  var filter = chain3.mc.filter("latest");
 
 Template.checkBalance.events({
@@ -47,17 +48,38 @@ Template.CoDeLog.events({
   'click #compress'(event,instance){
     let log = $("#beforeCompress").val();
     let jsonLog = EJSON.parse(log);
-    TemplateVar.set("afterCompress",compressLog(jsonLog));
+    let cmpJSON = compressLog(jsonLog);
+    // let cmpLog = LZString.compress(cmpJSON)
+    // var bufJSON = Buffer.from(EJSON.stringify(jsonLog), 'utf8');
+    // var bufLog = Buffer.from(cmpJSON, 'utf8');
+    // console.log(EJSON.stringify(jsonLog),cmpJSON);
+    // console.log(EJSON.stringify(jsonLog).length,cmpJSON.length);
+    // console.log(bufJSON,bufLog);
+    TemplateVar.set("afterCompress",cmpJSON);
     
   },
   'click #addlog'(){
-  	 var compressed = $("#addCompress")[0].checked;
-  	 if(compressed){
-
-  	 }
-  	 else{
-
-  	 }
+    var rad_id = Random.id(17);
+    console.log(rad_id);
+  	 // var compressed = $("#addCompress")[0].checked;
+     let log = $("#beforeCompress").val();
+     let jsonLog = EJSON.parse(log);
+     let cmpJSON = compressLog(jsonLog);
+  	 MoacConnect.addLog(rad_id,cmpJSON,function(e,r){
+      if(!e){
+        console.log(r);
+      }
+     })
+  },
+   'click #readLog'(){
+     let logId = $("#beforeCompress").val();
+    let template = Template.instance();
+     MoacConnect.readLog(logId,function(e,r){
+      if(!e){
+         let logString = EJSON.stringify(depressLog(r));
+         TemplateVar.set(template,"afterCompress",logString);
+      }
+     })
   },
   'keyup #afterCompress'(){
   	 TemplateVar.set("afterCompress",$("#afterCompress").val());

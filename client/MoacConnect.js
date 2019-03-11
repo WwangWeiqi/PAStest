@@ -13,6 +13,7 @@ export var InitChain3 = function() {
   } else if (typeof web3 !== 'undefined') {
     global.chain3 = new Chain3(web3.currentProvider);
     GetERC20Instance();
+    GetPASInstance();
   } else {
     console.log('No chain3? You should consider trying MoacMask!')
     try {
@@ -64,4 +65,22 @@ export var transferPAS = function(_to, _value,callback){
         callback(e,r);
       }
   })
+}
+
+export var addLog = function(_id, _log,callback){
+ var opt =  {
+    from: chain3.mc.accounts[0],
+    gas: 5000000,
+    value: 0,
+    gasPrice: 20000000000,
+  };
+  gPASInstance.addLog.sendTransaction(_id, _log,opt,function(e,r){
+      if(callback){
+        callback(e,r);
+      }
+  })
+}
+
+export var readLog = function(_id,callback){
+  gPASInstance.readLog(_id,callback);
 }

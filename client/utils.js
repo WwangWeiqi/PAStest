@@ -8,6 +8,7 @@ export const compressLog = function(_log){
 }
 
 
-export const dempressLog = function(_log){
-	
+export const depressLog = function(_log){
+	var unpacked = jsonpack.unpack(_log);
+	return unpacked;
 }

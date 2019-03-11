@@ -228,8 +228,151 @@ export const ERC20contractABI =[
 		"type": "function"
 	}
 ];
-export const PAScontractAddr ="";
-export const PAScontractABI ="";
+export const PAScontractAddr ="0x5e045d3b61999aa319f7a8496de29ea390e64721";
+export const PAScontractABI =[
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_content",
+				"type": "string"
+			}
+		],
+		"name": "compressLog",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_logId",
+				"type": "string"
+			}
+		],
+		"name": "readLog",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_logId",
+				"type": "string"
+			}
+		],
+		"name": "getLog",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "founder",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "logIdArray",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_logId",
+				"type": "string"
+			},
+			{
+				"name": "_logContent",
+				"type": "string"
+			}
+		],
+		"name": "addLog",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_content",
+				"type": "string"
+			}
+		],
+		"name": "depressLog",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"name": "_founder",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	}
+];
 
 export const founderAddr = "0xb970f1f71ab96f6f2556e404ed7681900303bf31"
 export const founderKey = "18851e68e34f564e5b16f7a785e849792f672a8b1341186de8c0e84398eaabbb";
